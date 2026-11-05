@@ -4,13 +4,17 @@
 
 ## Aktuelle Version
 
-**Oryven 1.0.82**, veröffentlicht am **2. November 2026**.
+**Oryven 1.0.83**, veröffentlicht am **3. November 2026**. Downloadstand geprüft am **5. November 2026**.
 
 - [Aktuellen Installer herunterladen](https://github.com/YvesBerlin1990/Oryven-Updates/releases/latest/download/Oryven-Setup.exe)
 - [Aktuelles Release und Versionshinweise](https://github.com/YvesBerlin1990/Oryven-Updates/releases/latest)
-- [Release 1.0.82](https://github.com/YvesBerlin1990/Oryven-Updates/releases/tag/v1.0.82)
+- [Release 1.0.83](https://github.com/YvesBerlin1990/Oryven-Updates/releases/tag/v1.0.83)
 
-Version 1.0.82 enthält die Korrekturen für Minimieren und Wiederherstellen sowie die erweiterten Userscript-Funktionen. Sie liegt auch oberhalb der zuvor lokal verteilten 1.0.81. Das Updateangebot für 1.0.75, 1.0.79 und 1.0.81 wurde geprüft.
+Version 1.0.83 korrigiert die Übergabe von Zahlungs- und Anmeldedialogen: Fensterreferenzen, Rückmeldungen an den Shop, spätere Weiterleitungen und Formular-POST-Daten bleiben erhalten. Die normale oder private Sitzung des aufrufenden Tabs wird beibehalten. Außerdem enthält der Meldedialog eine eigene Rubrik für Zahlungsprobleme.
+
+Die native Browser-Zahlungsschnittstelle `PaymentRequest` bleibt in der verwendeten WebView2-Laufzeit abgeschaltet. Die Veröffentlichung bestätigt keine allgemeine Freigabe aller Händlerzahlungen.
+
+Die bisherigen Korrekturen und Userscript-Funktionen bleiben enthalten. Der Updatekanal bietet 1.0.83 für installierte 1.0.75, 1.0.79, 1.0.81 und 1.0.82 an; das Upgrade von 1.0.82 auf 1.0.83 wurde bei der Veröffentlichung geprüft.
 
 Diese Veröffentlichung erfolgt bewusst **ohne Codesignatur**; ein Zertifikat ist für den vereinbarten privaten Nutzerkreis nicht vorgesehen. SHA-256-Prüfsummen dienen der Integritätsprüfung und ersetzen keine Codesignatur.
 
@@ -18,7 +22,7 @@ Diese Veröffentlichung erfolgt bewusst **ohne Codesignatur**; ein Zertifikat is
 
 Für eine Installation den oben verlinkten `Oryven-Setup.exe` herunterladen und starten. Der gemeinsame Assistent bietet je nach vorhandenem Zustand Installation, Aktualisierung beziehungsweise Reparatur oder Deinstallation an.
 
-In einem bereits installierten Oryven unter **Einstellungen → Über Oryven → Nach Updates suchen** prüfen, das Update herunterladen und **Installieren und neu starten** wählen. Nach dem Update muss die Versionsanzeige **1.0.82** nennen. Browserdaten bleiben bei der Aktualisierung erhalten.
+In einem bereits installierten Oryven unter **Einstellungen → Über Oryven → Nach Updates suchen** prüfen, das Update herunterladen und **Installieren und neu starten** wählen. Nach dem Update muss die Versionsanzeige **1.0.83** nennen. Browserdaten bleiben bei der Aktualisierung erhalten.
 
 Downloads und Updateprüfung funktionieren ohne GitHub-Konto. Der Velopack-Kanal heißt historisch `private`; dieser Name bezeichnet keine GitHub-Zugriffsbeschränkung.
 
@@ -33,7 +37,17 @@ Downloads und Updateprüfung funktionieren ohne GitHub-Konto. Der Velopack-Kanal
 
 Der technische Velopack-Erstinstaller ist im gemeinsamen Installer eingebettet und wird nicht separat als fünfte Datei hochgeladen. Ältere Releases können noch eine abweichende Dateiauswahl haben.
 
-Für 1.0.82 sind alle vier öffentlichen Downloads einschließlich Größen und SHA-256-Prüfsummen geprüft. Der [Herkunftsnachweis für 1.0.82](https://github.com/YvesBerlin1990/Oryven-Updates/releases/download/v1.0.82/source-1.0.82.json) benennt den tatsächlich gebauten Quellstand.
+Am 5. November 2026 wurden alle vier öffentlichen Downloads von 1.0.83 erneut ohne Anmeldung geladen und anhand ihrer Größen und SHA-256-Prüfsummen abgeglichen. Der aktuelle Feed verweist auf das passende Vollpaket und stimmt mit dem Feed des Releases überein. Der [Herkunftsnachweis für 1.0.83](https://github.com/YvesBerlin1990/Oryven-Updates/releases/download/v1.0.83/source-1.0.83.json) benennt den tatsächlich gebauten Quellstand `e0fa7453ac04892bbdcf8a3c940578a242eec137`.
+
+## Zugehörige Repositories
+
+| Repository | Aufgabe | Zugriff |
+|---|---|---|
+| [Oryven](https://github.com/YvesBerlin1990/Oryven) | Quellcode, Tests, Buildwerkzeuge und technische Dokumentation | Privat |
+| [Oryven-Updates](https://github.com/YvesBerlin1990/Oryven-Updates) | Installationsdateien, Update-Feed und Herkunftsnachweise | Öffentlich |
+| [Oryven-Feedback](https://github.com/YvesBerlin1990/Oryven-Feedback) | Fehler- und Wunschmeldungen mit optionalen Screenshots sowie Bearbeitungsstand | Privat |
+
+Der Browser verwendet dieses öffentliche Repository direkt für Downloads, Updateprüfung und Versionshinweise. Die Trennung ermöglicht Downloads ohne Anmeldung und erhält zugleich den privaten Zugriff auf Quellcode und Meldungen.
 
 ## Versionsfolge
 
