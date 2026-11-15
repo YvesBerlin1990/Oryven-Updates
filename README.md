@@ -1,31 +1,37 @@
 # Oryven Updates
 
-Hier erhältst du den Installer und automatische Updates für Oryven, einen privaten Browser für **Windows 11 x64**. Downloads funktionieren ohne GitHub-Konto; der Quellcode wird separat im privaten Projekt gepflegt.
+Öffentlicher Updatekanal für den privaten Windows-11-Browser Oryven. Updates und Versionshinweise funktionieren ohne GitHub-Konto; der Quellcode und das Meldearchiv bleiben privat.
 
-## Installieren und aktualisieren
+## Oryven 1.0.86 aktualisieren
 
-1. [Aktuellen Installer herunterladen](https://github.com/YvesBerlin1990/Oryven-Updates/releases/latest/download/Oryven-Setup.exe) und starten. Der Assistent bietet Installation, Aktualisierung, Reparatur oder Deinstallation an und richtet WebView2 bei Bedarf ein.
-2. Oryven öffnen und eine Adresse oder einen Suchbegriff eingeben.
-3. Für spätere Updates in Oryven **Einstellungen → Über Oryven → Nach Updates suchen** öffnen, herunterladen und **Installieren und neu starten** wählen.
+Voraussetzung ist die bereits abgeschlossene einmalige Umstellung auf **1.0.85**. Ab **1.0.86** laufen diese und alle folgenden Versionen ausschließlich über die interne Oryven-Updatefunktion:
 
-Zuletzt veröffentlicht: **Oryven 1.0.84 vom 5. November 2026**. Diese Version korrigiert den Userscript-Import aus den Einstellungen. Neue Scripts bleiben zunächst deaktiviert. Die Veröffentlichung ist bewusst **ohne Codesignatur**; veröffentlichte SHA-256-Prüfsummen dienen der Integritätsprüfung.
+1. In Oryven **Einstellungen → Über Oryven → Nach Updates suchen** öffnen.
+2. Versionshinweise lesen und das Update herunterladen.
+3. **Installieren und neu starten** oder die Installation beim Beenden wählen. Danach zeigt Oryven **1.0.86** an.
 
-[Aktuelles Release und Versionshinweise](https://github.com/YvesBerlin1990/Oryven-Updates/releases/latest) · [Release 1.0.84](https://github.com/YvesBerlin1990/Oryven-Updates/releases/tag/v1.0.84)
+Die reine Update-EXE aktualisiert die vorhandene Anwendung. Profile, Einstellungen, Lesezeichen, Passwörter, Scripts und Websiteanmeldungen bleiben erhalten. Es gibt keine erneute Einrichtung und keinen zweiten Profilumzug.
 
-Die native Zahlungs-API `PaymentRequest` bleibt in der verwendeten WebView2-Laufzeit abgeschaltet; die Version bestätigt keine allgemeine Freigabe aller Händlerzahlungen.
+[Release 1.0.86 und Changelog](https://github.com/YvesBerlin1990/Oryven-Updates/releases/tag/v1.0.86) · [Versionshinweise im Repository](docs/1.0.86.de.md) · [Updatevertrag](docs/UPDATEKANAL.md)
 
-## Hilfe und weitere Informationen
+Version 1.0.86 ergänzt Lesezeichen per Maus, Orvonkey 1.0 und freiwillige private GitHub-Scriptquellen. Einzelheiten stehen im Changelog, das auch in Oryven unter „Neu in Oryven“ erscheint.
 
-Für Bedienungsfragen die integrierte Hilfe nutzen; Fehler und Wünsche über den Meldedialog in Oryven senden. Die [Dokumentation des Updatekanals](docs/UPDATEKANAL.md) erklärt Release-Dateien, Prüfsummen, Herkunftsnachweise und bisherige Abnahmen.
+## Release-Dateien
+
+`Oryven-Update.exe` ist der reine interne Updater. Version 1.0.85 erwartet technisch noch den früheren Namen `Oryven-Setup.exe`; unter diesem Namen liegt ausschließlich eine bytegleiche Kopie desselben Updaters. **Es wird kein neuer Installer ausgeliefert.** Neue Clients verwenden direkt `Oryven-Update.exe`.
+
+Paketgröße, SHA-256, Version und eingebettete Dateien werden geprüft. Frühere Programmdateien bleiben bis zum bestätigten Neustart verfügbar. Die EXE ist bewusst unsigniert; Sicherheitsrichtlinien werden nicht verändert.
+
+Alte Velopack-Clients bis 1.0.84 erhalten hierüber keine nachträgliche automatische Systemumstellung. Frühere originale Releases und Downloads bleiben unverändert erhalten; diese Version ist ein Update für bereits umgestellte Installationen.
+
+## Zugehörige Repositories
 
 | Repository | Aufgabe | Zugriff |
 |---|---|---|
-| [Oryven](https://github.com/YvesBerlin1990/Oryven) | Browserquellcode, Tests, Buildwerkzeuge und technische Dokumentation | Privat |
-| [Oryven-Feedback](https://github.com/YvesBerlin1990/Oryven-Feedback) | Meldungen und Bearbeitungsstand | Privat |
-| Oryven-Updates | Installer, Update-Feed und Herkunftsnachweise | Öffentlich |
+| [Oryven](https://github.com/YvesBerlin1990/Oryven) | Quellcode, Tests, Buildwerkzeuge und Versionshinweise | Privat |
+| Oryven-Updates | Updatepakete, öffentlicher Feed, Changelog und Herkunftsnachweise | Öffentlich |
+| [Oryven-Feedback](https://github.com/YvesBerlin1990/Oryven-Feedback) | Fehler- und Wunschmeldungen sowie Bearbeitungsstand | Privat |
 
-## Ablage und Zuständigkeit
+Dieses Repository enthält die öffentliche Dokumentation; fertige Dateien liegen als GitHub-Release-Assets vor. Es besitzt kein eigenes Buildsystem. Quellcode und Build-Eingaben werden im privaten Oryven-Repository gepflegt. Die vorhandene integrierte Hilfe und der Meldedialog bleiben die Anlaufstellen für Bedienungsfragen und Fehler.
 
-Dieses Repository enthält Dokumentation; fertige Auslieferungsdateien liegen als **GitHub-Release-Assets** vor. Es enthält kein Buildsystem. Deshalb sind zusätzliche `project/`, `build/` und `dist/` hier nicht anwendbar. Quellcode und Build-Eingaben werden im privaten Oryven-Repository gepflegt. Die bestehenden Download- und Updateadressen bleiben erhalten.
-
-Der Kanal wird im Konto [YvesBerlin1990](https://github.com/YvesBerlin1990) gepflegt. Für die App gelten die Nutzungsbedingungen im Installer; eine allgemeine Quellcode-Lizenz wird durch diesen Downloadkanal nicht erteilt.
+Die App-Nutzungsbedingungen und bestehenden Lizenzhinweise bleiben erhalten. Durch den öffentlichen Downloadkanal wird keine allgemeine Quellcode-Lizenz erteilt.

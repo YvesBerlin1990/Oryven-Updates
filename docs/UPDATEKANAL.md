@@ -1,54 +1,35 @@
-# Oryven Updates
+# Oryven – öffentlicher Updatekanal
 
-Öffentlicher Downloadkanal für Oryven-Installationen und automatische Updates. Der Quellcode bleibt im privaten Projekt-Repository.
+## Version 1.0.86
 
-## Aktuelle Version
+[Release und Changelog](https://github.com/YvesBerlin1990/Oryven-Updates/releases/tag/v1.0.86) · [Versionshinweise](1.0.86.de.md)
 
-**Oryven 1.0.84**, veröffentlicht am **5. November 2026**. Downloadstand geprüft am **5. November 2026**.
+Nach der einmaligen Umstellung auf 1.0.85 gilt dauerhaft der interne Oryven-Updateweg. 1.0.86 und spätere Versionen werden in der bereits installierten Anwendung angeboten, heruntergeladen und nach Nutzerwahl angewandt. Ein neuer Erstinstaller oder ein erneuter Profilumzug gehört nicht dazu.
 
-- [Aktuellen Installer herunterladen](https://github.com/YvesBerlin1990/Oryven-Updates/releases/latest/download/Oryven-Setup.exe)
-- [Aktuelles Release und Versionshinweise](https://github.com/YvesBerlin1990/Oryven-Updates/releases/latest)
-- [Release 1.0.84](https://github.com/YvesBerlin1990/Oryven-Updates/releases/tag/v1.0.84)
+## Ablauf
 
-Version 1.0.84 behebt den Userscript-Import beim Öffnen des Script Managers aus den Einstellungen. Die Syntaxprüfung benötigt keinen ausgewählten Webseiten-Tab mehr und funktioniert auch für Editor und ZIP-Import aus internen Oryven-Seiten. Neue Scripts bleiben zunächst deaktiviert; fehlerhafte Syntax überschreibt keine vorhandene Scriptdatei.
+Unter **Einstellungen → Über Oryven → Nach Updates suchen** prüfen. „Installieren und neu starten“ und die Installation beim Beenden verwenden dieselbe vorhandene Oberfläche. Die Sitzung wird gespeichert; der eigene Updater wartet auf genau diesen Prozess und startet denselben Profilpfad wieder.
 
-Die native Browser-Zahlungsschnittstelle `PaymentRequest` bleibt in der verwendeten WebView2-Laufzeit abgeschaltet. Die Veröffentlichung bestätigt keine allgemeine Freigabe aller Händlerzahlungen.
+`oryven-release.json` enthält Version, Namen, Größe, SHA-256 und Changelog. Downloadadressen sind an die gelesene Version gebunden. Größe und Hash werden vor dem Austausch erneut geprüft. Das vollständige eingebettete Dateiverzeichnis wird validiert. Die vorhandene Dateitransaktion erhält die Rückfallversion bis zur passenden Startbestätigung.
 
-Die bisherigen Korrekturen einschließlich der Zahlungsdialoge aus 1.0.83 bleiben enthalten. Der Updatekanal bietet 1.0.84 für installierte 1.0.75, 1.0.79, 1.0.81, 1.0.82 und 1.0.83 an. Das Upgrade von 1.0.83 auf 1.0.84 wurde einschließlich Datenerhalt und 151 Laufzeitprüfungen mit den installierten Bibliotheken geprüft.
-
-Diese Veröffentlichung erfolgt bewusst **ohne Codesignatur**; ein Zertifikat ist für den vereinbarten privaten Nutzerkreis nicht vorgesehen. SHA-256-Prüfsummen dienen der Integritätsprüfung und ersetzen keine Codesignatur.
-
-## Installieren oder aktualisieren
-
-Für eine Installation den oben verlinkten `Oryven-Setup.exe` herunterladen und starten. Der gemeinsame Assistent bietet je nach vorhandenem Zustand Installation, Aktualisierung beziehungsweise Reparatur oder Deinstallation an.
-
-In einem bereits installierten Oryven unter **Einstellungen → Über Oryven → Nach Updates suchen** prüfen, das Update herunterladen und **Installieren und neu starten** wählen. Nach dem Update muss die Versionsanzeige **1.0.84** nennen. Browserdaten bleiben bei der Aktualisierung erhalten.
-
-Downloads und Updateprüfung funktionieren ohne GitHub-Konto. Der Velopack-Kanal heißt historisch `private`; dieser Name bezeichnet keine GitHub-Zugriffsbeschränkung.
-
-## Dateien eines Releases
+## Dateien
 
 | Datei | Zweck |
 |---|---|
-| `Oryven-Setup.exe` | Gemeinsamer Installer für Nutzer |
-| `Oryven.Browser-<Version>-private-full.nupkg` | Original-Vollpaket für den Updater |
-| `releases.private.json` | Update-Feed mit Paketnamen, Versionen, Größen und Prüfsummen |
-| `source-<Version>.json` | Herkunftsnachweis mit Quellcode-Commit, Inhaltsfingerabdruck, Build-Konfiguration und Paketprüfsummen |
+| `Oryven-Update.exe` | Reines internes Update einer vorhandenen nativen Oryven-Installation |
+| `Oryven-Setup.exe` | Bytegleicher Updater-Alias für den fest erwarteten Downloadnamen des Clients 1.0.85; kein Installer |
+| `oryven-release.json` | Updateversion, Dateinamen, Größe, SHA-256 und Changelog |
+| `releases.private.json` | Leerer alter Feed, damit Velopack-Clients keine ungeeigneten Pakete erhalten |
+| `source-1.0.86.json` | Tatsächlicher privater Quellcommit, Inhaltsfingerabdruck, Baukonfiguration und Paketprüfsummen |
 
-Der technische Velopack-Erstinstaller ist im gemeinsamen Installer eingebettet und wird nicht separat als fünfte Datei hochgeladen. Ältere Releases können noch eine abweichende Dateiauswahl haben.
+Der Client 1.0.85 akzeptiert nur den früheren festen Dateinamen. Beide EXE-Dateien sind deshalb identisch; `PreferredFileName` lässt neue Clients direkt die Update-EXE beziehen. Es werden kein WebView2-Bootstrapper und kein Installationsassistent mitgeliefert. Ersteinrichtung, Reparatur und Profilumzug werden abgewiesen. Vorhandener Starter, Profile und Datenpfade bleiben erhalten.
 
-Am 5. November 2026 wurden alle vier öffentlichen Downloads von 1.0.84 ohne Anmeldung geladen und anhand ihrer Größen und SHA-256-Prüfsummen abgeglichen. Der aktuelle Feed verweist auf das passende Vollpaket und stimmt mit dem Feed des Releases überein. Der [Herkunftsnachweis für 1.0.84](https://github.com/YvesBerlin1990/Oryven-Updates/releases/download/v1.0.84/source-1.0.84.json) benennt den tatsächlich gebauten Quellstand `5d38122369a0acc8f1c7a438b89f62213d3fbbea`.
+Die bewusst unsignierte Ausgabe braucht kein privates Codesignaturzertifikat. HTTPS und SHA-256 ersetzen keine unabhängige Herausgebersignatur. Windows-Sicherheitsrichtlinien werden nicht verändert.
 
-## Zugehörige Repositories
+## Zuständigkeiten und Herkunft
 
-| Repository | Aufgabe | Zugriff |
-|---|---|---|
-| [Oryven](https://github.com/YvesBerlin1990/Oryven) | Quellcode, Tests, Buildwerkzeuge und technische Dokumentation | Privat |
-| [Oryven-Updates](https://github.com/YvesBerlin1990/Oryven-Updates) | Installationsdateien, Update-Feed und Herkunftsnachweise | Öffentlich |
-| [Oryven-Feedback](https://github.com/YvesBerlin1990/Oryven-Feedback) | Fehler- und Wunschmeldungen mit optionalen Screenshots sowie Bearbeitungsstand | Privat |
+[Oryven](https://github.com/YvesBerlin1990/Oryven) enthält privat Quellcode, Tests und die maßgeblichen Versionshinweise. Dieses öffentliche Repository stellt Updatepakete und Changelog bereit. Oryven liest seine Ansicht „Neu in Oryven“ aus den Texten dieser Releases. [Oryven-Feedback](https://github.com/YvesBerlin1990/Oryven-Feedback) bleibt das private Meldearchiv.
 
-Der Browser verwendet dieses öffentliche Repository direkt für Downloads, Updateprüfung und Versionshinweise. Die Trennung ermöglicht Downloads ohne Anmeldung und erhält zugleich den privaten Zugriff auf Quellcode und Meldungen.
+Die Abnahme prüft den internen Übergang vom echten Client 1.0.85 mit synthetischen Profilen einschließlich Lesezeichen, Zugangsdaten, Einstellungen und Scriptwerten. Keine persönlichen Browserdaten werden dafür kopiert oder verändert. Der Herkunftsnachweis verbindet das Paket mit dem tatsächlich gebauten privaten Quellcommit und dessen Versionstag.
 
-## Versionsfolge
-
-Veröffentlichte Versionen werden nicht durch neue Dateien gleichen Namens ersetzt. Korrekturen erhalten eine neue Versionsnummer, die auch höher sein muss als bereits lokal verteilte Versionen. Entwürfe derselben oder einer älteren Version dürfen die Wahl der nächsten Version nicht beeinflussen.
+Veröffentlichte Originaldateien und frühere Tags bleiben unverändert. Der frühere Release 1.0.84 verwendet noch Velopack und bleibt als historischer Stand verfügbar; er erhält dadurch keine nachträgliche automatische Umstellung auf das neue System. Der Kanalname `private` ist die historische technische Kanalkennung und keine Zugriffsbeschränkung der öffentlichen Downloads.
