@@ -2,19 +2,19 @@
 
 Öffentlicher Updatekanal für den privaten Windows-11-Browser Oryven. Updates und Versionshinweise funktionieren ohne GitHub-Konto; der Quellcode und das Meldearchiv bleiben privat.
 
-## Oryven 1.0.86 aktualisieren
+## Oryven 1.0.88 aktualisieren
 
 Voraussetzung ist die bereits abgeschlossene einmalige Umstellung auf **1.0.85**. Ab **1.0.86** laufen diese und alle folgenden Versionen ausschließlich über die interne Oryven-Updatefunktion:
 
 1. In Oryven **Einstellungen → Über Oryven → Nach Updates suchen** öffnen.
 2. Versionshinweise lesen und das Update herunterladen.
-3. **Installieren und neu starten** oder die Installation beim Beenden wählen. Danach zeigt Oryven **1.0.86** an.
+3. **Installieren und neu starten** oder die Installation beim Beenden wählen. Danach zeigt Oryven **1.0.88** an.
 
 Die reine Update-EXE aktualisiert die vorhandene Anwendung. Profile, Einstellungen, Lesezeichen, Passwörter, Scripts und Websiteanmeldungen bleiben erhalten. Es gibt keine erneute Einrichtung und keinen zweiten Profilumzug.
 
-[Release 1.0.86 und Changelog](https://github.com/YvesBerlin1990/Oryven-Updates/releases/tag/v1.0.86) · [Versionshinweise im Repository](docs/1.0.86.de.md) · [Updatevertrag](docs/UPDATEKANAL.md)
+[Release 1.0.88 und Changelog](https://github.com/YvesBerlin1990/Oryven-Updates/releases/tag/v1.0.88) · [Versionshinweise im Repository](docs/1.0.88.de.md) · [Updatevertrag](docs/UPDATEKANAL.md)
 
-Version 1.0.86 ergänzt Lesezeichen per Maus, Orvonkey 1.0 und freiwillige private GitHub-Scriptquellen. Einzelheiten stehen im Changelog, das auch in Oryven unter „Neu in Oryven“ erscheint.
+Version 1.0.88 korrigiert neue Webseiten-Tabs. Bereits installierte Orvonkey-Scripts stehen beim Start sofort aus der lokalen Ablage bereit; die automatische Aktualisierungsprüfung läuft danach im Hintergrund. Nachweislich auf GitHub gelöschte Scripts werden auch lokal entfernt, während Verbindungs- und Zugriffsfehler den Cache erhalten. Einzelheiten stehen im Changelog, das auch in Oryven unter „Neu in Oryven“ erscheint.
 
 ## Release-Dateien
 

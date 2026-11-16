@@ -1,8 +1,8 @@
 # Oryven – öffentlicher Updatekanal
 
-## Version 1.0.86
+## Version 1.0.88
 
-[Release und Changelog](https://github.com/YvesBerlin1990/Oryven-Updates/releases/tag/v1.0.86) · [Versionshinweise](1.0.86.de.md)
+[Release und Changelog](https://github.com/YvesBerlin1990/Oryven-Updates/releases/tag/v1.0.88) · [Versionshinweise](1.0.88.de.md)
 
 Nach der einmaligen Umstellung auf 1.0.85 gilt dauerhaft der interne Oryven-Updateweg. 1.0.86 und spätere Versionen werden in der bereits installierten Anwendung angeboten, heruntergeladen und nach Nutzerwahl angewandt. Ein neuer Erstinstaller oder ein erneuter Profilumzug gehört nicht dazu.
 
@@ -20,7 +20,7 @@ Unter **Einstellungen → Über Oryven → Nach Updates suchen** prüfen. „Ins
 | `Oryven-Setup.exe` | Bytegleicher Updater-Alias für den fest erwarteten Downloadnamen des Clients 1.0.85; kein Installer |
 | `oryven-release.json` | Updateversion, Dateinamen, Größe, SHA-256 und Changelog |
 | `releases.private.json` | Leerer alter Feed, damit Velopack-Clients keine ungeeigneten Pakete erhalten |
-| `source-1.0.86.json` | Tatsächlicher privater Quellcommit, Inhaltsfingerabdruck, Baukonfiguration und Paketprüfsummen |
+| `source-1.0.88.json` | Tatsächlicher privater Quellcommit, Inhaltsfingerabdruck, Baukonfiguration und Paketprüfsummen |
 
 Der Client 1.0.85 akzeptiert nur den früheren festen Dateinamen. Beide EXE-Dateien sind deshalb identisch; `PreferredFileName` lässt neue Clients direkt die Update-EXE beziehen. Es werden kein WebView2-Bootstrapper und kein Installationsassistent mitgeliefert. Ersteinrichtung, Reparatur und Profilumzug werden abgewiesen. Vorhandener Starter, Profile und Datenpfade bleiben erhalten.
 
